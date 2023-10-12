@@ -1,5 +1,5 @@
 ---
-title: The new Common Agricultural Policy
+title: The EU's Common Agricultural Policy
 toc: true
 categories:
   - agriculture
@@ -71,10 +71,7 @@ These measures will be successively reinforced by the reforms of 2007 and 2013.
 
 ### Bird's eyeview
 
-<div class="custom-box">
-<image src="/assets/images/2023-04-02-eu-common-agricultural-policy/evolution_budget_cap.png">
-<p align-text=center>Evolution of CAP expenditure. 2021 budget is reduced because of Brexit.</p>
-</div>
+{% include image.html url="/assets/images/2023-04-02-eu-common-agricultural-policy/evolution_budget_cap.png" description="Evolution of CAP expenditure. 2021 budget is reduced because of Brexit." %}
 
 The graph above [^grapheUE] summarizes the evolution of the CAP budget over the years. It shows the profound transformations mentioned above, sometimes implemented a few years after their promulgation: from 1992, the replacement of market measures by direct aids and the introduction of the _Rural Development_ pillar, the decoupling of aids from 2005, the submission of certain direct aids to a green standard in 2016.  The black line marks a downward trend in the CAP in relation to EU GDP, which in fact corresponds to a decrease in importance in the budget: other policies are indeed taking up more and more space in the EU budget, for example the European Regional Development Fund ([ERDF](https://ec.europa.eu/regional_policy/funding/erdf_en), page not available in French) which rebalances income between EU regions.
 
@@ -104,12 +101,7 @@ The main focus of this reform is environmental protection. It has several change
   - To combat certain abuses of employing seasonal labor under poor conditions, adding social standards related to transparency and stability of contracts, as well as safety and health standards.
   - Addition of environmental standards such as maintaining 4% of non-productive surface to preserve areas of ecological interest (hedges, ponds), or mandatory rotation for farms of more than 10ha non-bio.
 
-
-<div class="custom-box" align-object=center>
-<image src=/assets/images/2023-04-02-eu-common-agricultural-policy/CAP_reform_2021.webp align-object="center">
-<p align-text=center>Changes introduced by the 2021 CAP in biodiversity-linked sectors.</it>
-</p>
-</div>
+{% include image.html url="/assets/images/2023-04-02-eu-common-agricultural-policy/CAP_reform_2021.webp" description="Changes introduced by the 2021 CAP in biodiversity-linked sectors." %}
 
 
 ### Criticism
@@ -120,6 +112,8 @@ As is to be expected for a policy of this magnitude, the new CAP is already attr
 - Insuffisance sur le plan de l'environnement
 - Insuffisance pour préserver la biodiversité. A group of 300 European experts has formulated remarks and recommendations [^experts_on_biodiv]. These include the introduction of multi-annual payments in addition to the annual payments of the current eco-schemes to better address long-term issues such as biodiversity, or the necessary adoption of precise scientific indicators driven by the Commission to measure biodiversity performance.
 - Finally, the fact that all the standards (social, environmental, health, animal welfare) that constrain European production still do not apply to foreign imports creates a real prejudice against EU agriculture[^bourget].
+
+
 
 [^experts_on_biodiv]: Pe’er, G. et al. (2022) ‘How can the European Common Agricultural Policy help halt biodiversity loss? Recommendations by over 300 experts’, Conservation Letters, p. e12901. [https://doi.org/10.1111/conl.12901](https://doi.org/10.1111/conl.12901)
 

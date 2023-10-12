@@ -17,6 +17,7 @@ remote_theme: "mmistakes/minimal-mistakes@4.19.3"
 
 minimal_mistakes_skin: "default"
 minimal_mistakes_skin2: "dark"
+root: /
 
 title: "Aymeric Roucher"
 subtitle: ""
@@ -64,7 +65,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
-  - jemoji
   - jekyll-include-cache
   - jekyll-seo-tag
 
@@ -85,7 +85,7 @@ author:
       url: "https://www.linkedin.com/in/a-roucher/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter"
-      url: "https://twitter.com/a-roucher"
+      url: "https://twitter.com/AymericRoucher"
 
 footer:
   links:
@@ -95,6 +95,9 @@ footer:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/a-roucher/"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter"
+      url: "https://twitter.com/AymericRoucher"
 
 # Collections
 collections:
@@ -127,7 +130,7 @@ defaults:
 # analytics:
 #   provider: "google-gtag"
 #   google:
-#     tracking_id: "UA-154432000-1"
+#     tracking_id: "G-TP4C0DZ8NB"
 #     anonymize_ip: false # default
 # google_site_verification: google9c27511a2a69fff6.html
 
