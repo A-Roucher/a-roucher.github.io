@@ -8,34 +8,34 @@ tags:
   - tensorflow
 ---
 
-# Pourquoi une UI pour l'API GPT ?
+# Why an UI for the GPT API?
 
-❌ Il y a quelques mois, j'ai résilié mon abonnement à ChatGPT.
+❌ A few months ago, I canceled my ChatGPT subscription.
 
-Cet outil est incroyable, surtout GPT4: quand je l'utilise pour du débuggage par exemple, je peux gagner plusieurs heures par jour. Mais 20$ par mois d'abonnement, c'est trop cher si je ne l'utilise pas régulièrement.
+This tool is incredible, especially GPT4: when I use it for debugging, for example, I can save several hours per day. But a $20 per month subscription is too expensive if I don\'t use it regularly.
 
-Mais cet été, tout a changé: GPT4 est devenu disponible par l'API d'OpenAI.
+But this summer, everything changed: GPT4 became available through OpenAI\'s API.
 
-L'API, c'est une interface qui permet d'appeler des réponses des modèles OpenAI dans des programmes.
-La vraie différence, c'est qu'on paye selon le nombre de mots renvoyés par GPT4 ▶ Donc le payement est adapté à l'usage.
+The API is an interface that allows you to call responses from OpenAI models in programs.
+The real difference is that you pay according to the number of words returned by GPT4 ▶ So the payment is adapted to usage.
 
-🛠 J'ai donc juste construit une interface qui permet d'utiliser l'API OpenAI dans un notebook.
+🛠 So I just built an interface that allows you to use the OpenAI API in a notebook.
 
-### Résultat : énorme réduction des frais
+### Result: huge reduction in costs
 
-✅ Pour exactement les mêmes réponses qu'auparavant, mes frais sont tombés à moins d'1$ par jour où je l'utilise beaucoup, 0$ les autres jours.
+✅ For exactly the same responses as before, my costs have dropped to less than $1 per day when I use it a lot, $0 on other days.
 
 <img src="/assets/images/2023-09-23-an-ui-for-gpt-api/usage.png">
 
-Voilà quoi ça ressemble:
+This is what it looks like:
 
 <img src="/assets/images/2023-09-23-an-ui-for-gpt-api/ui.png">
 
-# Comment c'est construit
+# How it\'s built
 
-- L'interface est faite de simple widgets IPython.
+- The interface is made of simple IPython widgets.
 
-Le coeur de la machine est cette fonction `get_user_input` de la classe `Chat`. Elle met à jour entre autres l'attribute `history`, qui est une liste des messages, chaque message étant un dictionnaire avec les clés `"role"` et `"content"`, ce qui est un format directement accepté par `openai.ChatCompletion.create()`.
+The core of the machine is this `get_user_input` function of the `Chat` class. It updates, among other things, the `history` attribute, which is a list of messages, each message being a dictionary with the keys `"role"` and `"content"`, which is a format directly accepted by `openai.ChatCompletion.create()`.
 
 ```python
 def get_user_input(self, b) -> None:
@@ -60,8 +60,8 @@ def get_user_input(self, b) -> None:
     return
 ```
 
-- L'option `stream=True` dans `openai.Chatcompletion` permet de recevoir en live la complétion de GPT, donc de dialoguer bien plus facilement.
+- The `stream=True` option in `openai.Chatcompletion` allows you to receive GPT completion live, making it much easier to interact.
 
-# Pour l'utiliser
+# To use it
 
-Clonez [ce repo](https://github.com/A-Roucher/gpt_api_ui), copiez votre [clé API OpenAI](https://platform.openai.com/account/api-keys), lancez la cellule du notebook et c'est parti !
+Clone [this repo](https://github.com/A-Roucher/gpt_api_ui), copy your [OpenAI API key](https://platform.openai.com/account/api-keys), run the notebook cell, and you're good to go!
