@@ -12,9 +12,9 @@ tags:
 
 ❌ A few months ago, I canceled my ChatGPT subscription.
 
-This tool is incredible, especially GPT4: when I use it for debugging, for example, I can save several hours per day. But a $20 per month subscription is too expensive if I don\'t use it regularly.
+This tool is incredible, especially GPT4: when I use it for debugging, for example, I can save several hours per day. But a $20 per month subscription is too expensive if I don't use it regularly.
 
-But this summer, everything changed: GPT4 became available through OpenAI\'s API.
+But this summer, everything changed: GPT4 became available through OpenAI's API.
 
 The API is an interface that allows you to call responses from OpenAI models in programs.
 The real difference is that you pay according to the number of words returned by GPT4 ▶ So the payment is adapted to usage.

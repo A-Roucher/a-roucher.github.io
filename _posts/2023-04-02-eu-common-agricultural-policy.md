@@ -9,7 +9,11 @@ tags:
   - politics
 ---
 
-The next iteration of the Common Agricultural Policy (CAP) was [approved in December 2021](https://www.consilium.europa.eu/en/policies/cap-introduction/cap-future-2020-common-agricultural-policy-2023-2027/) after three years of tough discussions between EU governments: it will come into force in 2023, and will be effective until 2027. Each year, it will mobilize 30% of the EU budget. So, what is the use of this expenditure?
+The next iteration of the Common Agricultural Policy (CAP) was [approved in December 2021](https://www.consilium.europa.eu/en/policies/cap-introduction/cap-future-2020-common-agricultural-policy-2023-2027/) after three years of tough discussions between EU governments: it will come into force in 2023, and will be effective until 2027.
+
+Each year, it will mobilize 30% of the EU budget.
+
+So, what is the use of this huge pile of money?
 
 # Objectives
 
@@ -73,7 +77,7 @@ These measures will be successively reinforced by the reforms of 2007 and 2013.
 
 {% include image.html url="/assets/images/2023-04-02-eu-common-agricultural-policy/evolution_budget_cap.png" description="Evolution of CAP expenditure. 2021 budget is reduced because of Brexit." %}
 
-The graph above [^grapheUE] summarizes the evolution of the CAP budget over the years. It shows the profound transformations mentioned above, sometimes implemented a few years after their promulgation: from 1992, the replacement of market measures by direct aids and the introduction of the _Rural Development_ pillar, the decoupling of aids from 2005, the submission of certain direct aids to a green standard in 2016.  The black line marks a downward trend in the CAP in relation to EU GDP, which in fact corresponds to a decrease in importance in the budget: other policies are indeed taking up more and more space in the EU budget, for example the European Regional Development Fund ([ERDF](https://ec.europa.eu/regional_policy/funding/erdf_en), page not available in French) which rebalances income between EU regions.
+The graph above [^grapheUE] summarizes the evolution of the CAP budget over the years. It shows the profound transformations mentioned above, sometimes implemented a few years after their promulgation: from 1992, the replacement of market measures by direct aids and the introduction of the _Rural Development_ pillar, the decoupling of aids from 2005, the submission of certain direct aids to a green standard in 2016.  The black line marks a downward trend in the CAP in relation to EU GDP, which in fact corresponds to a decrease in importance in the budget: other policies are indeed taking up more and more space in the EU budget, for example the European Regional Development Fund ([ERDF](https://ec.europa.eu/regional_policy/funding/erdf_en)) which rebalances income between EU regions.
 
 Over the years, as Europe has expanded, the net balance of each country in the CAP has changed.
 
