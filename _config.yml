@@ -19,7 +19,7 @@ minimal_mistakes_skin: "default"
 minimal_mistakes_skin2: "dark"
 root: /
 
-title: "Aymeric Roucher"
+title: "Climate and Machine Learning"
 subtitle: ""
 email: aymeric.roucher@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"

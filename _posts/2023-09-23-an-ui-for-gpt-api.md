@@ -21,7 +21,7 @@ The real difference is that you pay according to the number of words returned by
 
 🛠 So I just built an interface that allows you to use the OpenAI API in a notebook.
 
-### Result: huge reduction in costs
+## Result: huge reduction in costs
 
 ✅ For exactly the same responses as before, my costs have dropped to less than $1 per day when I use it a lot, $0 on other days.
 

@@ -31,9 +31,9 @@ These are all the objectives of the CAP.
 
 Did you read all of it? Well done, I didn't. This list is not clear; because one cannot look at the CAP as a simple and coherent architectural drawing. As the CAP is the vector of all EU agricultural policy, it is a behemoth in constant evolution, to which each reform adds a head. Let's therefore focus on the political power struggles that led to its creation and its subsequent evolution.
 
-## The CAP before 2021
+# The CAP before 2021
 
-### Chronology
+## Chronology
 
 1957 - Treaty of Rome
 : This treaty created the European Economic Community (EEC) between France, Germany, Italy and the Benelux countries, in order to create a market allowing the free movement of people, goods, services and capital. In particular, internal customs duties were abolished and replaced by external customs. It is also the announcement of future developments: the Preamble mentions that the signatories are "determined to lay the foundations of an ever closer union between the peoples of Europe".
@@ -73,7 +73,7 @@ These measures will be successively reinforced by the reforms of 2007 and 2013.
 : The [Green Pact](https://wikipedia.org/wiki/European_Green_Deal) is a set of policy initiatives proposed in 2020 by the European Commission to make the EU carbon neutral by 2050. It is in this framework that the strategy ["from farm to fork"](https://food.ec.europa.eu/horizontal-topics/farm-fork-strategy_en) was adopted, as well as an updated biodiversity strategy and a climate law in June 2021. Key agri-environmental targets by 2030 include reducing the use of chemical pesticides (-50%), antibiotics (-50%) and fertilizers (-20%); increasing the share of land devoted to organic farming to 25%; taking at least 10% of agricultural land out of production to reduce pressure on the environment; halting the loss of biodiversity on agricultural land; and reducing net GHG emissions by 55%. These ambitious targets have profound implications for the CAP.
 
 
-### Bird's eyeview
+## Bird's eyeview
 
 {% include image.html url="/assets/images/2023-04-02-eu-common-agricultural-policy/evolution_budget_cap.png" description="Evolution of CAP expenditure. 2021 budget is reduced because of Brexit." %}
 
@@ -86,7 +86,7 @@ Over the years, as Europe has expanded, the net balance of each country in the C
 We see for example that despite the large budget that France is allocated by the CAP, it is still a net deficit: indeed, the integration into the EU of new countries such as Poland and Romania, less rich and strongly agricultural, has loaded the contributions of the founding countries of the EEC.
 
 
-## The next CAP: 2023-2027
+# The next CAP: 2023-2027
 
 
 The Green Pact signed in 2020 is very binding for the CAP, as it requires reversing many trends [^INRAE]:
@@ -96,7 +96,7 @@ The Green Pact signed in 2020 is very binding for the CAP, as it requires revers
 
 The new iteration of the CAP is trying to address these challenges.
 
-### Main components
+## Main components
 
 The main focus of this reform is environmental protection. It has several changes: [^bourget]
 - The main novelty is in Pillar 1, with the replacement of the "Green Payments" of the previous reform: some of their constraints are taken over in the Cross Compliance part, the rest is integrated in the new system of "Eco-schemes". The "Eco-Schemes" will be aid subject to compliance with certain standards. Another novelty: the Member States have a lot of freedom for the construction of these "Eco-schemes"; this CAP thus returns to the principle of subsidiarity of the EU at the risk of fraying the principle of a common policy.
@@ -108,7 +108,7 @@ The main focus of this reform is environmental protection. It has several change
 {% include image.html url="/assets/images/2023-04-02-eu-common-agricultural-policy/CAP_reform_2021.webp" description="Changes introduced by the 2021 CAP in biodiversity-linked sectors." %}
 
 
-### Criticism
+## Criticism
 
 As is to be expected for a policy of this magnitude, the new CAP is already attracting criticism:
 - The Commission proposed the introduction of a limit on direct payments to benefit small farms, but this reform was rejected by the Council. The race to enlarge farms is likely to continue, even if the share of direct payments reserved for young farmers increases by 50% [^bourget].
@@ -127,7 +127,7 @@ As is to be expected for a policy of this magnitude, the new CAP is already attr
 
 [^guyomard]: Guyomard, H., Mahe, L.P. (1994) ‘La réforme de la PAC et les négociations du GATT : perspectives pour l’agriculture française et communautaire’. Hal-01594088. [https://hal.archives-ouvertes.fr/hal-01594088/document](https://hal.archives-ouvertes.fr/hal-01594088/document)
 
-[^4]: Chronologie du site de l'UE. [https://www.consilium.europa.eu/fr/policies/cap-introduction/timeline-history/](https://www.consilium.europa.eu/fr/policies/cap-introduction/timeline-history/)
+[^4]: EU consilium website - chronology of CAP [https://www.consilium.europa.eu/fr/policies/cap-introduction/timeline-history/](https://www.consilium.europa.eu/fr/policies/cap-introduction/timeline-history/)
 
 [^grapheUE]: Sources: CAP expenditure for past years: European Commission, DG Agriculture and Rural Development (Financial Report). GDP: Eurostat and Global Insight.
 
