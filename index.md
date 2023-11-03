@@ -1,8 +1,15 @@
 ---
 permalink: /
 layout: archive
-title: "Welcome!"
+title: "Welcome to my blog!"
 author_profile: true
 ---
 
-Welcome to my blog! My name is Aymeric Roucher. I'm a Machine Learning Engineer, interested in NLP and Climate, and hoping to reconcile these two interests one day.
+My name is Aymeric Roucher. I'm a Machine Learning Engineer, interested in Artificial Intelligence 👩‍💻 and Climate 🌍, and this blog will be talking about both, sometimes even the intersection of the two.
+
+
+🧐 Have a look at my articles! To get started, here's my [step-by-step inquiry about what's causing global warming]({% post_url 2022-11-29-bordeaux-vineyard-global-warming %}).
+
+
+> It would appear that we have reached the limits of what it is possible to achieve with computer technology, although one should be careful with such statements, as they tend to sound pretty silly in 5 years.
+> _John von Neumann, Hungarian-American mathematician and physicist (1903–1957)_

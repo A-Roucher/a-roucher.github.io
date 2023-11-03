@@ -2,11 +2,11 @@
 title: The EU's Common Agricultural Policy
 toc: true
 categories:
-  - agriculture
+  - Agriculture
 tags:
-  - agriculture
+  - Agriculture
   - EU
-  - politics
+  - Politics
 ---
 
 The next iteration of the Common Agricultural Policy (CAP) was [approved in December 2021](https://www.consilium.europa.eu/en/policies/cap-introduction/cap-future-2020-common-agricultural-policy-2023-2027/) after three years of tough discussions between EU governments: it will come into force in 2023, and will be effective until 2027.

@@ -2,10 +2,10 @@
 title: Divide your ChatGPT costs by 10 by directly calling the API
 toc: true
 categories:
-  - study
+  - Productivity
 tags:
-  - deep_learning
-  - tensorflow
+  - LLM
+  - Productivity
 ---
 
 # Why an UI for the GPT API?

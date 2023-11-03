@@ -3,12 +3,12 @@ title: Will the Bordeaux vineyard dry up tomorrow?
 subtitle: About the impact of global warming on viticulture.
 toc: true
 categories:
-  - agriculture
-  - wine
-  - statistics
+  - Agriculture
+  - Statistics
 tags:
-  - agriculture
-  - grapevine
+  - Agriculture
+  - Grapevine
+  - Wine
 ---
 
 In 2013, an [American study led by Professor Lee Hannah](https://www.pnas.org/doi/10.1073/pnas.1210127110) made a big splash: the average temperature in the Mediterranean climate increasingly exceeding the needs of the vine, large areas would become unfit for viticulture in the next forty years, especially on the Mediterranean rim. So, are our vineyards doomed?

@@ -2,10 +2,10 @@
 title: Global warming is our fault - a detailed walkthrough.
 toc: true
 categories:
-  - climate
+  - Climate
 tags:
-  - climate
-  - politics
+  - Climate
+  - Politics
 ---
 
 There is a huge political effort to combat Greenhouse Gas emissions, blamed to by the [Intergovernmental Panel on Climate Change (IPCC)](https://www.ipcc.ch/) as the main culprit for the ongoing global warming.
@@ -24,7 +24,7 @@ But since this reasoning is a chain of arguments, the alarmist conclusion is onl
 Originally, the US Environmental Protection Agency was seeking an international convention to limit GHG emissions. Since the Reagan administration worried that independant scientists would have too much influence, the IPCC was created in 1988 as an intergovernmental body, where scientists would take part both as experts and government representatives.
 
 _So the IPCC is both a scientific body and an intergovernmental organization._
-Its main job is to prepare comprehensive Assessment Reports evaluating the latest state of scientific, technical and socio-economic knowledge on climate change: impacts, risks, and options for adaptation and mitigation.
+Its main job is to prepare comprehensive Assessment Reports evaluating the latest state of scientific, technical and socio-economic knowledge on climate change: impacts, risks, and options for adaptation and mitigation. ___This is an important thing to note: the IPCC reports do not produce any new scientific studies: they only provide an overview of an existing body of science.___
 
 > "For the Sixth Assessment Report, 743 experts were selected as Coordinating Lead Authors, Lead Authors and Review Editors from about 2,827 nominations." [source: IPCC](https://www.ipcc.ch/site/assets/uploads/2021/07/AR6_FS_select.pdf)
 
