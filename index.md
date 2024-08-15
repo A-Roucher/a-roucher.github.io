@@ -5,7 +5,7 @@ title: "About me"
 author_profile: true
 ---
 
-My name is Aymeric (pronounce "m-ric") Roucher.
+My name is Aymeric (pronounce "M-Ric") Roucher.
 
 I'm a Machine Learning Engineer at Hugging Face 🤗, passionate about Artificial Intelligence 👩‍💻 and Climate 🌍.
 
@@ -13,4 +13,4 @@ I'm a Machine Learning Engineer at Hugging Face 🤗, passionate about Artificia
 
 
 > It would appear that we have reached the limits of what it is possible to achieve with computer technology, although one should be careful with such statements, as they tend to sound pretty silly in 5 years.
-> _John von Neumann, Hungarian-American mathematician and physicist (1903–1957)_
+_John von Neumann, Hungarian-American mathematician and physicist (1903–1957)_

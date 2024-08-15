@@ -69,7 +69,7 @@ plugins:
   - jekyll-seo-tag
 
 author:
-  name: "Aymeric Roucher"
+  name: "Aymeric (M-Ric) Roucher"
   avatar: "/assets/images/photo_LinkedIn.jpg"
   bio: "Machine Learning Engineer at 🤗, passionate about LLMs, worried about climate."
   location: "Paris, FRA"
