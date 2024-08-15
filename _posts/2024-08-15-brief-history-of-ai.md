@@ -49,7 +49,7 @@ It is this limitation that leads to the downfall of the connectionist approach.
 For years, another approach takes over: the symbolic approach. The symbolic approach seeks to create reasoning from the other side: starting from a high level of abstraction. This school aims to represent all possible reasoning in a symbolic language. Once the situation is expressed as a sentence in this symbolic language, it would become simple, using predetermined calculation rules, to transform the sentence into a logical conclusion. This approach is theoretically appealing because it is more explainable. But it is extremely ambitious: is it possible to express all the decisions we make, even those made mechanically[^fn4], in a theoretical language? Because this language would have to be able to accurately express all the concepts of the world, and even the imaginary ones. Moreover, such an AI would have discrete reasoning processes: the inputs could only be symbols present or not, hence 0s or 1s. But aren't many of our reasonings a fuzzy sum of continuous parameters? For example, when I decide whether to go out or not, I consider the weather: but the color of the sky varies continuously across all shades of gray to blue, and removing this nuance would certainly reduce the quality of reasoning.  
 To mitigate the difficulty induced by this complexity, the symbolist community starts by developing expert systems restricted to a specific domain. But they are very costly to design for poor performance: this approach yields little fruit. And so begins what has been called the "AI Winter," a long period of stagnation and doubt.
 
-### Yann LeCun and Backpropagation
+### Yann LeCun, Geoffrey Hinton and Backpropagation
 
 In science, revolutions often begin at the margins. In the 1990s, the young Yann LeCun starts to take an interest in Artificial Intelligence. He reads the account of a debate where the linguist Noam Chomsky asserted that the brain had pre-established structures for learning to speak. Opposite him, the developmental psychologist Jean Piaget argued that everything is learned, even some of the language structures, and that language construction occurs gradually throughout the development of intelligence[^fn5]. Who is right: does reasoning occur from pre-constructed structures, or can it emerge from simple mechanisms? This question will be formative in the development of Artificial Intelligence. Yann LeCun henceforth makes learning his guiding principle.  
 He revisits Rosenblatt's neural networks and revives a gradient backpropagation technique that had existed since the 1960s in control theory[^fn6] but was seemingly ignored by Rosenblatt, recently re-theorized by Rumelhart and Canadian Hinton, which theoretically allows training a multi-layer neural network, i.e., adapting it to a dataset. LeCun consolidates the theory[^fn7] and achieves for the first time a model capable of learning from a dataset. He applies it to recognizing digits in photos of handwritten digits, compressed to 28x28 pixels[^fn8]. The demonstration is impressive, much better than all existing systems at the time. By the late 1990s, his system processes 10 to 20% of all checks in the United States.
@@ -60,7 +60,7 @@ There are several formulations of problems one might want to solve with Artifici
 
 ### Learning, Then Inference
 
-Yann LeCun was among the pioneers of learning. Today, the two fundamental steps of Artificial Intelligence are: learning and inference. It is important to always keep this distinction in mind. Learning is the stage where we adjust the model’s weights to give it reasoning ability, while inference is where the model predicts an outcome based on its inputs.  
+Yann LeCun was among the pioneers of AI learning. Today, the two fundamental steps of Artificial Intelligence are: learning and inference. It is important to always keep this distinction in mind. Learning is the stage where we adjust the model’s weights to give it reasoning ability, while inference is where the model predicts an outcome based on its inputs.  
 When we talk about training or optimization, it is the learning stage. When we talk about prediction or generation, it’s inference.  
 Take the example of ChatGPT. It is a product (a chatbot) offered by OpenAI, powered by one of their models, for example, GPT-4. Training is prodigiously expensive – millions of euros – and lasts months. This is why the model’s "knowledge" (we will see later that this knowledge is extremely fuzzy) stops at a certain date: yesterday's information cannot yet be integrated; it would take at least a few weeks to retrain the model with this information.  
 On the contrary, when a user chats with the chatbot, it’s only inference, much faster (a few milliseconds) and less expensive (a few thousandths of a cent). The model does not learn from what we tell it – it may seem to remember because it generates its text from the entire conversation from the beginning, but as soon as the conversation changes, it starts over. However, the conversation could very well be saved as material for the training datasets of OpenAI's future models.
@@ -108,7 +108,7 @@ This algorithm has been improved since then – for example, we add inertia to t
 
 ---
 
-However, for LeCun and Hinton, who had begun a collaboration, winter was still not over. A new algorithm, the SVM, similar to a single-layer network, works very well on small datasets and does not require a complex training procedure. The training procedure for LeCun’s "deep" neural networks is more complex and lacks a theoretical guarantee of success[^fn10], so it is judged less elegant. As a result, deep neural networks are once again sidelined by the AI community.
+However, for LeCun and Hinton, who had begun a collaboration, winter was still not over. A new algorithm, the SVM, similar to a single-layer network, works very well on small datasets and does not require a complex training procedure. The training procedure for their "deep" neural networks is more complex and lacks a theoretical guarantee of success[^fn10], so it is judged less elegant. As a result, deep neural networks are once again sidelined by the AI community.
 
 ### Deep Learning Makes a Name for Itself
 
@@ -124,7 +124,7 @@ But yet, as soon as we want to look up the definition of a term that is not ther
 In other words, we want our model to generalize the information from its training data through proto-reasoning like "if there is a triangular snout rather than a trunk, it is probably a dog."  
 A risk of a naive universal approximator is to adapt to the data without really generalizing. This is called "overfitting." See the figure below for an illustration of this phenomenon: the model learns a boundary that is far too complex between its classes and, as a result, proves useless as soon as we move away from the examples in its training.
 
-{% include image.html url="/assets/images/2024-08-15-brief-history-of-ai/france_graph.png" description="Several models try to predict based on coordinates [Latitude, Longitude] the output 'Is located in France'. They predict 1 for 'Yes', 0 for 'No'." %}
+{% include image.html url="/assets/images/2024-08-15-brief-history-of-ai/france_graph_en.png" description="Several models try to predict based on coordinates [Latitude, Longitude] the output 'Is located in France'. They predict 1 for 'Yes', 0 for 'No'." %}
 
 We want to learn the right way, by generalizing.  
 This is a difficult problem. The best way we’ve found is to seek simplicity, thus following Ockham's Razor. This methodological principle was formulated by the English Franciscan monk William of Ockham: "Plurality must not be posited without necessity"[^fn12]. To explain a phenomenon, it is better to simplify things by first considering the explanation that involves the fewest factors, as it is the one with the least strong hypothesis. We often unconsciously use this principle: for example, even if a student arriving late to an 8:30 am math class can explain their tardiness by a complex set of circumstances, the teacher might think that the student simply overslept.  
@@ -158,13 +158,17 @@ This approach was implemented by the Word2vec algorithm in 2013[^fn15], which cr
 
 To do this, we can place the different vectors representing the words of a sentence side by side and input the whole thing into a large neural network to ask it to predict the word to complete.  
 However, until 2017, deep neural networks were not really capable of considering dynamic interactions between their different inputs.  
-To illustrate this difficulty, let's take the example of German => French translation.  
-In German, the verb is pushed to the end of relative clauses, even if the subject remains at the beginning[^fn16].  
+To illustrate this difficulty, let's take the example of German => English translation.  
+In German, the verb is pushed to the end of relative clauses, even if the subject remains at the beginning[^fn16].
+
 > "Ich frohe mich, dass er am Donnerstag Abend zum Essen kommt."  
-> "I am glad that he comes to dinner on Thursday evening."  
-But this is not the case for a non-relative clause:  
+> "I glad myself, that he on Thursday evening to dinner comes."  
+
+But this is not the case for a non-relative clause:
+
 > "Er kommt am Donnerstag Abend zum Essen, ich frohe mich"  
-> "He comes to dinner on Thursday evening, I am glad."  
+> "He comes on Thursday evening to dinner, I glad myself."
+
 So depending on the content of the sentence, whether or not the sentence is formulated as a relative clause, the position of the inputs is completely altered. We would therefore need to model dynamic interactions according to the inputs, such as "if we are in a relative clause, the subject of the clause must interact strongly with the very last word (the verb)."  
 But our neural network is not capable of this because it processes its inputs only according to their position: whatever the input sentence, the first word will always be taken into account in the same way in the network: by arriving in neuron No.1 of the first layer, it will then be sent to all the neurons of layer 2 according to the network's pre-established weights, and so on for all the layers.
 
