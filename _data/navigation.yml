@@ -1,5 +1,5 @@
 main:
-  - title: "Posts"
+  - title: "Posts by year"
     url: /posts/
   # - title: "Portfolio"
   #   url: /portfolio/
@@ -7,6 +7,6 @@ main:
 #    url: /resume/
 #  - title: "Categories"
 #    url: /categories/
-  - title: "Tags"
+  - title: "Posts by tag"
     url: /tags/
   
