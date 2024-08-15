@@ -6,12 +6,15 @@ tags:
   - Artificial Intelligence
 ---
 
-L'intelligence artificielle (on notera souvent ce terme par l'abréviation "IA") vit aujourd'hui un bouillonnement d'idées et de développements sans aucun précédent dans toute l'histoire de la science. Mais son développement ne date pas d'hier ; pour reprendre à ses débuts, il nous faut retourner au milieu du siècle passé. En étudiant l'histoire de l'IA, une saga pleine de coups de tonnerre et de revirements, nous verrons se mettre en place les principales briques techniques des modèles  que nous utilisons aujourd'hui. 
-Symbolistes contre connexionistes
+L'intelligence artificielle (on notera souvent ce terme par l'abréviation "IA") vit aujourd'hui un bouillonnement d'idées et de développements sans aucun précédent dans toute l'histoire de la science. Mais son développement ne date pas d'hier ; pour reprendre à ses débuts, il nous faut retourner au milieu du siècle passé. En étudiant l'histoire de l'IA, une saga pleine de coups de tonnerre et de revirements, nous verrons se mettre en place les principales briques techniques des modèles  que nous utilisons aujourd'hui.
+
+### Symbolistes contre connexionistes
+
 A partir des années 1950, avec l'apparition des premiers ordinateurs, et la capacité de leur faire exécuter des algorithmes[^fn1], on s'aperçoit que les machines peuvent désormais résoudre certaines tâches mentales élémentaires : calcul mental, tri de listes, résolution d'équations simples...
 Une question jaillit aussitôt : "Pourra-t-on rendre ces machines plus intelligentes, peut-être à l'égal de l'Homme ?"  C'est le début d'une quête passionnante.
 
 ---
+
 ### ⚙️ Brique technique: les Algorithmes
 
 Qu'est ce qu'un algorithme?
@@ -26,6 +29,7 @@ Renvoyer somme
 ```
 Cet algorithme calcule la moyenne d'une liste de nombres.
 La ordinateurs actuels ne brillent pas par leur esprit d'initiative (ils n'en ont rigoureusement aucune tant qu'on ne leur a pas donné d'instructions), mais ils sont capables d'appliquer des règles  simples avec une rapidité immense : ils sont donc extrêmement puissants pour l'exécution d'algorithmes.
+
 ---
 
 Mais comment construire une machine qui pense? Une première approche, imaginée par Frank Rosenblatt dès 1950, veut reconstruire le raisonnement par le bas, en partant de briques de raisonnement simplissimes. Il prend l'exemple d'une fourmilière : une fourmi prend ses décisions par des raisonnement simples, presque mécaniques. Mais en faisant fonctionner et interagir un grand nombre de ces mécanismes simple, la fourmilière dans son ensemble parvient à obtenir des comportements complexes qui lui permettant d'explorer et utiliser efficacement son environnement. Pourquoi ne pas combiner mécanismes élémentaires pour remonter à des niveaux d'abstraction plus élevés, jusqu'à parvenir à résoudre des tâches complexes?
@@ -129,24 +133,28 @@ Mais le traitement de textes reste encore hors d'atteinte.
 En 2013, l'algorithme Word2vec permet de créer des représentations des mots comme des vecteurs, et avec une représentation des mots comme vecteurs, on peut commencer à traduire des textes[^fn14]. 
 
 ---
+
 ### ⚙️ Brique technique: Représenter les mots comme des vecteurs
+
 D'abord, qu'est ce qu'un vecteur? C'est simplement une liste de nombres dans un ordre précis. Par exemple, des coordonnées dans l'espace en X, Y, Z forment un vecteur, en trois dimensions qu'on peut noter [X, Y, Z]. Inversement, tout vecteur peut être vu comme les coordonnées d'un point dans un espace. En une, en deux, ou en trois dimensions, nous pouvons nous les représenter : mais les vecteurs n'ont pas de limite de taille, ils peuvent être à mille dimensions.
 On peut faire des opérations sur les vecteurs : par exemple, pour deux vecteurs de taille égale, on peut multiplier chaque nombre de l'un par le nombre de l'autre à la même position (= pour la même dimension), puis sommer tous les produits pour obtenir un seul nombre. Cette opération s'appelle le produit scalaire. On peut aussi, bien sûr, les additionner ou les soustraire, en réalisant l'addition ou la soustraction sur chacune des dimensions une par une.
 Une idée qui a émergé assez tôt a été de représenter les mots comme des vecteurs : les dimensions pourraient représenter des concepts, par exemple l'axe féminin - masculin, grand-petit, pluvieux-ensoleillé, fort-faible...
 Cette approche a été implémentée par l'algorithme Word2vec en 2013[^fn15], qui crée une représentation vectorielle pour plus d'un milliard de mots anglais. Cette représentation est extrêmement intéressante : les vecteurs obtenus ont entre eux des relations mathématiques qui reproduisent des liens conceptuels entre les mots qu'ils représentent. Par exemple, si on prend le vecteur qui représente le mot "reine", qu'on lui soustrait le vecteur de "femme", et qu'on ajoute "homme", on obtient le vecteur de "roi" ! Ainsi, on s'aperçoit que les vecteurs des mots représentent des concepts comme la royauté ou la féminité.
 
 {% include image.html url="/assets/images/2024-08-15-brief-history-of-ai/word_vectors.png" description="" %}
-                                                                                                    
+
+---
+
 Pour ce faire, on peut placer côte à côte les différents vecteurs qui représentent les mots d'une phrase, et donner l'ensemble en entrée à un grand réseau de neurones, pour lui demander de prédire le mot à compléter.
 Cependant, jusqu'en 2017, les réseaux de neurones profonds ne sont pas vraiment capable de prendre en compte des interactions dynamiques entre leurs différentes entrées.
 Pour illustrer cette difficulté, prenons l'exemple de la traduction allemand => français.
 En allemand, le verbe est rejeté à la fin des propositions relatives, même si le sujet reste au début[^fn16].
-"Ich frohe mich, dass er am Donnerstag Abend zum Essen kommt."
-"Je réjouis moi, que il Jeudi soir pour dîner vient».
+> "Ich frohe mich, dass er am Donnerstag Abend zum Essen kommt."
+> "Je réjouis moi, que il Jeudi soir pour dîner vient».
 
 Mais ce n'est pas le cas pour une proposition non relative:
-"Er kommt am Donnerstag Abend zum Essen, ich frohe mich"
-"Il vient Jeudi Soir pour dîner, je réjouis moi."
+> "Er kommt am Donnerstag Abend zum Essen, ich frohe mich"
+> "Il vient Jeudi Soir pour dîner, je réjouis moi."
 
 Alors selon le contenu de la phrase, selon que la phrase soit formulée ou non comme une proposition relative, la position des entrées est complètement modifiée. Il faudrait donc pouvoir modéliser des interactions dynamiques selon les entrées, comme "si nous sommes dans une proposition relative, le sujet de la relative doit interagir fortement avec le tout dernier mot (le verbe) ».
 Or notre réseau de neurones n'en est pas capable, car il traite ses entrées uniquement en fonction de leur position : quelle que soit la phrase d'entrée, le premier mot sera toujours pris en compte de la même manière dans le réseau : en arrivant dans le neuron n°1 de la première couche, il sera ensuite renvoyé à tous les neurons de la couche 2 en fonction des poids pré-établis du réseau, et ainsi de suite pour toutes les couches.

@@ -21,7 +21,7 @@ root: /
 
 title: "Aymeric Roucher 👨‍💻"
 subtitle: ""
-email: aymeric.roucher@gmail.com
+email: aymeric.roucher@yahoo.fr
 description: >- # this means to ignore newlines until "baseurl:"
   I'm Aymeric (pronounce "m-ric"), Machine Learning Engineer at Hugging Face.
 words_per_minute: 300
@@ -76,10 +76,10 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope"
-      url: "mailto:aymeric.roucher@gmail.com"
+      url: "mailto:aymeric.roucher@yahoo.fr"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/a-roucher"
+      url: "https://github.com/aymeric-roucher"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/a-roucher/"
@@ -91,7 +91,7 @@ footer:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/a-roucher"
+      url: "https://github.com/aymeric-roucher"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/a-roucher/"

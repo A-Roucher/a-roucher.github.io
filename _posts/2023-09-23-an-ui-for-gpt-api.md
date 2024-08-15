@@ -64,4 +64,4 @@ def get_user_input(self, b) -> None:
 
 # To use it
 
-Clone [this repo](https://github.com/A-Roucher/gpt_api_ui), copy your [OpenAI API key](https://platform.openai.com/account/api-keys), run the notebook cell, and you're good to go!
+Clone [this repo](https://github.com/aymeric-roucher/gpt_api_ui), copy your [OpenAI API key](https://platform.openai.com/account/api-keys), run the notebook cell, and you're good to go!
