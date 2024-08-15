@@ -80,7 +80,10 @@ Reprenons le problème de l'entraînement d'un réseau de neurones.
 Que veut-on obtenir à la fin? On veut obtenir le meilleur jeu de paramètres dans le réseau, celui qui nous donne une erreur moyenne la plus petite possible sur notre jeu de données d'entraînement.
 On appelle cette erreur moyenne la "fonction de coût"[^fn9] : "coût" parce que l'erreur est un coût qu'on veut minimiser, et "fonction" car cette erreur moyenne varie en fonction des paramètres : quand on fait varier chaque paramètre, l'erreur moyenne varie en conséquence.
 Maintenant, comment trouver le meilleur jeu de paramètres pour minimiser cette fonction de coût? Pour simplifier la représentation du problème, prenons un réseau à deux paramètres, a et b. C'est bien sûr une simplification drastique de la réalité où les modèles ont des milliards de paramètres. Mais elle est pratique car nous pouvons représenter la fonction de coût sur un graphe en 3D : on note le paramètre A selon l'axe X, le paramètre B selon l'axe Y, et la fonction de coût du réseau (qui dépend donc des paramètres A et B) selon l'axe Z.
-![][challenges-1]
+
+{% include image.html url="/assets/images/2024-08-15-brief-history-of-ai/minima.png" description="La fonction de coût admet des minima : notre but est de trouver le minimum local, c'est à dire le meilleur jeu de paramètres qui existe." %}
+
+
 La fonction de coût varie en fonction de ses deux paramètres : on obtient un joli paysage. 
 Attention, ce graphe n'a rien à voir avec le précédent : ici les axes X et Y représentent des paramètres, alors que dans le précédent, X et Y étaient des entrées du système. Le seul point commun de ces deux graphes est d'être en 3D.
 Que signifient les reliefs de ce paysage, montagnes et vallées, et quel endroit veut-on trouver ? 
@@ -131,7 +134,8 @@ D'abord, qu'est ce qu'un vecteur? C'est simplement une liste de nombres dans un 
 On peut faire des opérations sur les vecteurs : par exemple, pour deux vecteurs de taille égale, on peut multiplier chaque nombre de l'un par le nombre de l'autre à la même position (= pour la même dimension), puis sommer tous les produits pour obtenir un seul nombre. Cette opération s'appelle le produit scalaire. On peut aussi, bien sûr, les additionner ou les soustraire, en réalisant l'addition ou la soustraction sur chacune des dimensions une par une.
 Une idée qui a émergé assez tôt a été de représenter les mots comme des vecteurs : les dimensions pourraient représenter des concepts, par exemple l'axe féminin - masculin, grand-petit, pluvieux-ensoleillé, fort-faible...
 Cette approche a été implémentée par l'algorithme Word2vec en 2013[^fn15], qui crée une représentation vectorielle pour plus d'un milliard de mots anglais. Cette représentation est extrêmement intéressante : les vecteurs obtenus ont entre eux des relations mathématiques qui reproduisent des liens conceptuels entre les mots qu'ils représentent. Par exemple, si on prend le vecteur qui représente le mot "reine", qu'on lui soustrait le vecteur de "femme", et qu'on ajoute "homme", on obtient le vecteur de "roi" ! Ainsi, on s'aperçoit que les vecteurs des mots représentent des concepts comme la royauté ou la féminité.
-![][93033pic1]
+
+![][word_vectors]
                                                                                                     
 Pour ce faire, on peut placer côte à côte les différents vecteurs qui représentent les mots d'une phrase, et donner l'ensemble en entrée à un grand réseau de neurones, pour lui demander de prédire le mot à compléter.
 Cependant, jusqu'en 2017, les réseaux de neurones profonds ne sont pas vraiment capable de prendre en compte des interactions dynamiques entre leurs différentes entrées.
@@ -182,15 +186,6 @@ Un exemple flagrant en est le rapport technique de GPT-4[^fn21], qui montre des 
 En fait, il a été montré que ce déblocage subit de capacités nouvelles est le résultat naturel d'une augmentation progressive (ou incrémentale) de performance des LLM[^fn23]. Pour prendre une analogie dans le monde réel : si je cours le marathon en 10h, je ne vais gagner aucun championnat. Et réduire progressivement mon temps, 10 minutes par 10 minutes, ne fera toujours pas frémir mon compteur de médailles... Jusqu'aux trois étapes entre 2h30 et 2h, où je passerai soudain d'une performance départementale à celle de champion du monde. Evidemment, pour nous humains ce sont ces dernières tranches de dix minutes qui sont les plus dures à obtenir - car nous partons tous avec le même matériel (notre corps), et l'effort pour le changer est immense. Mais pour une machine dont l'architecture peut être modifiée à volonté, ce seuil des 2h n'est pas plus difficile à passer que les précédents. Résultat notable : l'émergence de chacune de ces capacités à partir d'une certaine taille de modèle est imprédictible.
 Depuis 2017, quelques innovations importantes ont encore amélioré les Large Language Models: données d'entraînement massives et de meilleure qualité, grouped-query attention[^fn24], position encodée par des matrices de rotation[^fn25], activation SwiGLU[^fn26]... Mais la base reste la même: une architecture Transformers. Seulement, on ajoute aux réseaux de plus en plus de couches de neurons, de neurones par couche et de têtes d'attention. Les LLM pré-entraînés sur des texte de plus en plus immenses ont peu à peu pris les premières places sur tous les tests possibles, dans toutes les tâches et toutes les modalités. A croire qu'on aurait trouvé une recette universelle pour l'*intelligence*.
 
-[NeuralNetwok_chien]: NeuralNetwok_chien.png
-
-[challenges-1]: challenges-1.png width=3032px height=2259px
-
-[gradient3d2JPG]: gradient3d2JPG.jpg width=649px height=371px
-
-[PastedGraphic1]: PastedGraphic1.png width=841px height=472px
-
-[93033pic1]: 93033pic1.png width=236px height=201px
 
 [^fn1]: Permise par l'architecture pensée par von Neumann en 1945 et implémentée pour l'EDVAC en 1952, qui séparait pour la première fois le logiciel (software) de son support mécanique (hardware), permettant ainsi de coder dans se soucier de mécanique.
 
