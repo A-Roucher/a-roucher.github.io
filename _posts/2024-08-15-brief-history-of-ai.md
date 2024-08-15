@@ -6,13 +6,12 @@ tags:
   - Artificial Intelligence
 ---
 
-# Brève histoire de l'intelligence artificielle
 L'intelligence artificielle (on notera souvent ce terme par l'abréviation "IA") vit aujourd'hui un bouillonnement d'idées et de développements sans aucun précédent dans toute l'histoire de la science. Mais son développement ne date pas d'hier ; pour reprendre à ses débuts, il nous faut retourner au milieu du siècle passé. En étudiant l'histoire de l'IA, une saga pleine de coups de tonnerre et de revirements, nous verrons se mettre en place les principales briques techniques des modèles  que nous utilisons aujourd'hui. 
 Symbolistes contre connexionistes
 A partir des années 1950, avec l'apparition des premiers ordinateurs, et la capacité de leur faire exécuter des algorithmes[^fn1], on s'aperçoit que les machines peuvent désormais résoudre certaines tâches mentales élémentaires : calcul mental, tri de listes, résolution d'équations simples...
 Une question jaillit aussitôt : "Pourra-t-on rendre ces machines plus intelligentes, peut-être à l'égal de l'Homme ?"  C'est le début d'une quête passionnante.
 
----
+
 ### Algorithmes
 
 Qu'est ce qu'un algorithme?
@@ -115,7 +114,7 @@ Mais pourtant, dès qu'on veut chercher la définition d'un terme qui n'y figure
 En d'autres termes, on veut que notre modèle généralise les informations de ses données d'entraînement, par des proto-raisonnements comme "s'il y a un museau triangulaire plutôt qu'une trompe, c'est probablement un chien".
 Un risque d'un approximateur universel naïf est de s'adapter aux données sans vraiment généraliser. On parlera d'"overfitting", "sur-ajustement". Voyez sur la figure ci-dessous une illustration de ce phénomène: le modèle apprend une limite bien trop complexe entre ses classes, et en conséquence se révèle inutile dès qu'on s'éloigne des exemples de son entraînement.
 
-{% include image.html url="/assets/images/2024-08-15-brief-history-of-ai/france_graph.png" description="Plusieurs modèles essayent de prédire en focntion de coordonnes [Latitude, Longitude] la sortie "Est situé en France". Ils prédisent 1 pour un "Oui", 0 pour un "Non". %}
+{% include image.html url="/assets/images/2024-08-15-brief-history-of-ai/france_graph.png" description='Plusieurs modèles essayent de prédire en focntion de coordonnes [Latitude, Longitude] la sortie "Est situé en France". Ils prédisent 1 pour un "Oui", 0 pour un "Non".' %}
 
 On veut apprendre de la bonne manière, en généralisant.
 C'est un problème difficile. Le meilleur moyen qu'on ait trouvé est de chercher la simplicité, en suivant ainsi le Rasoir d'Ockham. Ce principe méthodologique a été formulé ainsi par le moine franciscain anglais Guillaume d'Ockham: « Les multiples ne doivent pas être utilisés sans nécessité »[^fn12]. Pour expliquer un phénomène, mieux vaut simplifier les choses en considérant d'abord l'explication qui fait intervenir le moins de facteurs, car c'est celle qui a l'hypothèse la moins forte. Nous utilisons souvent inconsciemment ce principe: ainsi même si un élève arrivant en retard au cours de maths de 8h30 peut expliquer son retard par un concours de circonstances complexe, le professeur va peut être se dire que l'élève a tout simplement tardé à se réveiller. C'est d'ailleurs cette recherche de simplicité qui invalide d'office la plupart des théories du complot : si le réchauffement climatique était un complot, il devrait nécessiter une coordination incroyable entre des milliers d'acteurs à travers la planète: météorologues, agriculteurs, biologistes... Il est beaucoup plus simple d'envisager que le climat se réchauffe effectivement, même si admettre cette thèse implique des conséquences désagréables. Ce principe est si puissant qu'il a été qualifié par le philosophe Bertrand Russel de "la maxime méthodologique suprême lorsqu'on philosophe"[^fn13].
