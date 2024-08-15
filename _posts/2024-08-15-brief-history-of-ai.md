@@ -11,8 +11,8 @@ Symbolistes contre connexionistes
 A partir des années 1950, avec l'apparition des premiers ordinateurs, et la capacité de leur faire exécuter des algorithmes[^fn1], on s'aperçoit que les machines peuvent désormais résoudre certaines tâches mentales élémentaires : calcul mental, tri de listes, résolution d'équations simples...
 Une question jaillit aussitôt : "Pourra-t-on rendre ces machines plus intelligentes, peut-être à l'égal de l'Homme ?"  C'est le début d'une quête passionnante.
 
-
-### Algorithmes
+---
+### ⚙️ Brique technique: les Algorithmes
 
 Qu'est ce qu'un algorithme?
 C'est une suite ordonnée d'étapes pré-définies, dont l'exécution permet de résoudre une tâche. Une recette de cuisine est un algorithme. On les exprime souvent en pseudocode. Voilà un exemple de pseudocode pour un algorithme :
@@ -31,9 +31,9 @@ La ordinateurs actuels ne brillent pas par leur esprit d'initiative (ils n'en on
 Mais comment construire une machine qui pense? Une première approche, imaginée par Frank Rosenblatt dès 1950, veut reconstruire le raisonnement par le bas, en partant de briques de raisonnement simplissimes. Il prend l'exemple d'une fourmilière : une fourmi prend ses décisions par des raisonnement simples, presque mécaniques. Mais en faisant fonctionner et interagir un grand nombre de ces mécanismes simple, la fourmilière dans son ensemble parvient à obtenir des comportements complexes qui lui permettant d'explorer et utiliser efficacement son environnement. Pourquoi ne pas combiner mécanismes élémentaires pour remonter à des niveaux d'abstraction plus élevés, jusqu'à parvenir à résoudre des tâches complexes?
 Rosenblatt crée des fonctions mathématiques élémentaires qu'il appelle des neurons : ces neurons prennent en entrée plusieurs signaux, les combinent et les transforment pour obtenir un seul canal de sortie. Si en sommant tous ces signaux, la somme est supérieur à un certain seuil, le neuron s'active, et donne en sortie la somme en question, sinon, il donne 0[^fn2]. On peut former une connexion de la sortie d'un neuron à l'entrée d'un autre, et former ainsi des couches successives, en assignant un poids particulier à chaque connexion. Par exemple, construisons un réseau de neurones pour détecter quel est l'animal présent sur une image. Le neuron a  situé sur la couche 1 détectera la proposition A, par exemple "couleur orange", et le neuron b situé sur la couche 2 détectera la proposition B, "l'image représente un renard". Dans ce cas, on veut que la connexion du neuron a vers le neuron b soit positive: ainsi quand on a détecté une couleur orange, comme il est probable qu'un animal orange soit un renard, il y aura un signal positif pour aider B à s'activer aussi. A l'inverse, si le neuron c situé lui aussi sur la couche 2 détecte la condition C, "l'image représente un éléphant", on préfère que la connexion de a vers c soit négative: si l'image est orange, ce n'est probablement pas un éléphant. Chaque couche successive peut ainsi s'appuyer sur les précédentes pour monter d'un niveau d'abstraction: si la couche 0 est le signal direct des pixels, couche 1 représente des couleurs et formes élémentaires, la couche 2 peut déjà représenter des motifs et formes plus avancées, la 3 peut représenter des concepts comme "griffe" ou "oreille", et la 4 peut déterminer de quel animal il s'agit. Cette approche est la première ébauche des grands modèles d'aujourd'hui. 
 
-{% include image.html url="/assets/images/2024-08-15-brief-history-of-ai/NeuralNetwok_chien.png" description="" %}
+{% include image.html url="/assets/images/2024-08-15-brief-history-of-ai/NeuralNetwok_chien.png" description="Illustration de la montée en abstraction de la représentation au fil des couches de neurones successives." %}
 
-Des approximateurs universels
+### Des approximateurs universels
 Si l'on connectait juste entre eux des neurons qui somment des signaux avec certains coefficients, on obtiendrait un système linéaire : c'est à dire qu'en multipliant tous les signaux d'entrée (par exemple la valeur des pixels) par un même coefficient, la sortie serait aussi multipliée par ce coefficient. Un tel réseau ne serait pas très utile: dans notre exemple de la classification d'image, si on divise par deux la luminosité de l'image,  donc la valeur de chaque pixel, la valeur du neurone en sortie serait aussi divisée par deux, donc la classification "ceci est un chat" deviendrait deux fois moins certaine, ce qui serait absurde : la nuit, les chats sont peut-être gris mais ils restent des chats. La clé de l'efficacité des réseaux de neurones réside dans la fonction non linéaire qui est appliquée à la somme en sortie du neurone: c'est elle qui donne au réseau de neurones son caractère non linéaire. En fait, un réseau de neurones est un approximateur universel : il peut reproduire aussi finement qu'on le veut n'importe quelle fonction de ses entrées, pourvu qu'on lui laisse assez de couches intermédiaires et que ses poids soient ajustés correctement.
 
 ### L'hiver de l'intelligence artificielle
@@ -52,7 +52,6 @@ Il reprend les réseaux de neurons de Rosenblatt, et reprend une technique de r�
 Il existe plusieurs formulations de problèmes que l'on peut vouloir donner à résoudre aux intelligences artificielles. On veut toujours prédire une sortie en fonction d'une entrée - chacune de ces dernières pouvant comporter un ou plusieurs éléments. Si la sortie est discrète, c'est à dire qu'elle doit appartenir à un nombre fini de catégories, on appellera cela un problème de classification. Par exemple, si on demande "Quel type d'animal est-ce là ?» en donnant en entrée une photo d'animal (qui est un ensemble de pixels uniques), c'est un problème de classification. La régression est la configuration où la sortie peut prendre des valeurs continues tout au long d'un axe : par exemple "toutes les valeur entre 0 et 1". La question "Combien vaut l'action NVIDIA au temps t ?" est une question de régression. Dans l'exemple de l'outil développé par Yann LeCun ci-dessus, l'objectif est de prédire un chiffre entre 0 et 9 : il s'agit donc d'un problème de classification.
                                                                                                     
 
-
 ### Apprentissage, puis Inférence
 Yann LeCun a été parmi les pionniers de l'apprentissage. Aujourd'hui, les deux étapes fondamentales de l'intelligence artificielle sont : apprentissage et inférence. Il est important de toujours garder en tête cette distinction. L'apprentissage est l'étape où l'on adapte les poids du modèle pour lui donner une capacité à *raisonner*, l'inférence est celle où il le modèle prédit un résultat en fonction de ses entrées.
 Quand on parle d'entraînement ou d'optimisation, il s'agit de l'étape d'apprentissage. Quand on parle de prédiction ou de génération, c'est de l'inférence.
@@ -61,7 +60,7 @@ Au contraire, quand un utilisateur discute avec le chatbot, c'est seulement de l
 
 ---
 
-### Entraînement par Rétropropagation
+### ⚙️ Brique technique: Entraînement par Rétropropagation
 Comment changer les poids des connexions d'un réseau de neurones pour le rendre performant sur un problème? Par exemple, partant d'un réseau qui a des poids initialisés au hasard, comment l'entraîner à reconnaître l'animal qui figure sur une photo? On commence par ajouter au réseau une dernière couche de neurones, qui a autant de neurones que de classes de prédiction possibles. Par exemple, on peut entraîner le réseau à reconnaître seulement 1. Un chat, 2. Un chien. On ajoute donc une couche finale de 2 neurones: si le neurone n°1 s'active avec une valeur plus haute, la prédiction est "un chat", si c'est le n°2, c'est un chien. Bien sûr à cet étape, comme les poids sont créés au hasard, les prédictions seront aléatoires. On veut donc entraîner le réseau, c'est à dire ajuster ses poids pour avoir des prédictions correctes.
 Pour cela, on a besoin d'un jeu de données contenant des photos d'animaux, annotées avec le nom de chaque animal. Par exemple: (photo_1193.jpg, "un chat"). Puis (photo_2194.jpg, "un chien"), etc. 
 Nous devons donc  trouver  les paramètres (ici les poids des connexions) qui minimisent l'erreur (le nombre de prédictions fausses). Pour cela, on va modifier l'ensemble de nos paramètres par petits pas. A chaque pas, on va:
@@ -72,7 +71,7 @@ Cette opération est répétée des centaines de milliers de fois : c'est le pro
 Cet algorithme a connu quelques réglages depuis, mais c'est toujours le même qui sous-tend l'intégralité de l'intelligence artificielle aujourd'hui.
                                                                                                     
 
-### Optimisation: trouver la vallée la plus basse.
+### ⚙️ Brique technique: Optimisation - trouver la vallée la plus basse.
 Un peu trop de barbarismes ici, n'est ce pas? Ne vous inquiétez pas, après ce point technique, je vous laisse tranquilles pendant quelques pages! Et nous allons expliquer ci-dessous pourquoi les réseaux de neurones profonds sont plus durs à entraîner que d'autres algorithmes d'IA.
 Pour faire notre optimisation, vous avez vu juste au dessus qu'on faisait un petit pas par rétro-propagation. Mais essayons de mieux comprendre ce qui se passe.
 Reprenons le problème de l'entraînement d'un réseau de neurones.
@@ -130,7 +129,7 @@ Mais le traitement de textes reste encore hors d'atteinte.
 En 2013, l'algorithme Word2vec permet de créer des représentations des mots comme des vecteurs, et avec une représentation des mots comme vecteurs, on peut commencer à traduire des textes[^fn14]. 
 
 ---
-### Représenter les mots comme des vecteurs
+### ⚙️ Brique technique: Représenter les mots comme des vecteurs
 D'abord, qu'est ce qu'un vecteur? C'est simplement une liste de nombres dans un ordre précis. Par exemple, des coordonnées dans l'espace en X, Y, Z forment un vecteur, en trois dimensions qu'on peut noter [X, Y, Z]. Inversement, tout vecteur peut être vu comme les coordonnées d'un point dans un espace. En une, en deux, ou en trois dimensions, nous pouvons nous les représenter : mais les vecteurs n'ont pas de limite de taille, ils peuvent être à mille dimensions.
 On peut faire des opérations sur les vecteurs : par exemple, pour deux vecteurs de taille égale, on peut multiplier chaque nombre de l'un par le nombre de l'autre à la même position (= pour la même dimension), puis sommer tous les produits pour obtenir un seul nombre. Cette opération s'appelle le produit scalaire. On peut aussi, bien sûr, les additionner ou les soustraire, en réalisant l'addition ou la soustraction sur chacune des dimensions une par une.
 Une idée qui a émergé assez tôt a été de représenter les mots comme des vecteurs : les dimensions pourraient représenter des concepts, par exemple l'axe féminin - masculin, grand-petit, pluvieux-ensoleillé, fort-faible...
