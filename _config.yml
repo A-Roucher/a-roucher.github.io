@@ -131,7 +131,7 @@ defaults:
 #   provider: "google-gtag"
 #   google:
 #     tracking_id: "G-TP4C0DZ8NB"
-#     anonymize_ip: false # default
+#     anonymize_ip: true
 # google_site_verification: google9c27511a2a69fff6.html
 
 category_archive:
