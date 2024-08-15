@@ -81,7 +81,7 @@ The graph above [^grapheUE] summarizes the evolution of the CAP budget over the 
 
 Over the years, as Europe has expanded, the net balance of each country in the CAP has changed.
 
-{% include cap_country_balance_en.html %}
+{% include graphs/cap_country_balance_en.html %}
 
 We see for example that despite the large budget that France is allocated by the CAP, it is still a net deficit: indeed, the integration into the EU of new countries such as Poland and Romania, less rich and strongly agricultural, has loaded the contributions of the founding countries of the EEC.
 

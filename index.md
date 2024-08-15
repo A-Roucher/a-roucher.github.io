@@ -1,12 +1,13 @@
 ---
 permalink: /
 layout: archive
-title: "Welcome to my blog!"
+title: "About me"
 author_profile: true
 ---
 
-My name is Aymeric Roucher. I'm a Machine Learning Engineer, interested in Artificial Intelligence 👩‍💻 and Climate 🌍, and this blog will be talking about both, sometimes even the intersection of the two.
+My name is Aymeric (pronounce "m-ric") Roucher.
 
+I'm a Machine Learning Engineer at Hugging Face 🤗, passionate about Artificial Intelligence 👩‍💻 and Climate 🌍.
 
 🧐 Have a look at my articles! To get started, here's my [step-by-step inquiry about what's causing global warming]({% post_url 2022-11-29-bordeaux-vineyard-global-warming %}).
 
