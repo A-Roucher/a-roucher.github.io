@@ -39,7 +39,7 @@ Are we seeing a massive migration of European vineyards to the North?
 See for yourself.
 
 {% raw %}
-<iframe src="/assets/images/2022-11-29000-bordeaux-vineyard-global-warming/vineyard_map/index.html" height="570px" width="100%" style="border:none;"></iframe>
+<iframe src="/assets/images/2022-11-29-bordeaux-vineyard-global-warming/vineyard_map/index.html" height="570px" width="100%" style="border:none;"></iframe>
 {% endraw %}
 
 
@@ -56,7 +56,7 @@ The Laccave science project is producing a [census of these trial adaptations](h
 
 Pablo Almaraz, researcher at the University of Cadiz, has shown the tangible impact of this adaptation. He studied the relationship between the quality of Bordeaux wine, reported for over a century by a Bordeaux broker, and the average temperature from April to September. He thus managed to obtain an estimate of the optimal temperature: we then obtain the graph below, where we see that, since 1970, the increase in temperature is preceded by a progressive increase in the optimal temperature.
 
-{% include image.html url="/assets/images/2022-11-29000-bordeaux-vineyard-global-warming/Almaraz.png" description="Value in °C of the average temperature in Bordeaux (in yellow, smoothed value in continuous line) and the calculated optimal temperature (in green, with 95% uncertainty margins). Graph obtained by reproducing Pablo Almaraz's work with Python library pymc." %}
+{% include image.html url="/assets/images/2022-11-29-bordeaux-vineyard-global-warming/Almaraz.png" description="Value in °C of the average temperature in Bordeaux (in yellow, smoothed value in continuous line) and the calculated optimal temperature (in green, with 95% uncertainty margins). Graph obtained by reproducing Pablo Almaraz's work with Python library pymc." %}
 
 ## The road ahead
 
@@ -65,7 +65,7 @@ So, is the Bordeaux vineyard safe? It seems that the work in the vineyard - and 
 
 <figure class="image">
     <video style="margin: auto; display: block; padding-top: 20px;border-radius: 4px;" width="320" height="240" loop autoplay muted>
-    <source src="/assets/images/2022-11-29000-bordeaux-vineyard-global-warming/smoke_bordeaux.mp4" type="video/mp4">
+    <source src="/assets/images/2022-11-29-bordeaux-vineyard-global-warming/smoke_bordeaux.mp4" type="video/mp4">
   </video>
   <figcaption>In the middle of this satellite footage, you can see the plumes of smoke from the fires flowing over the Bordeaux vineyards. This creates a risk of "smoke taint", a threat well known from California winegrowers.</figcaption>
 </figure>
