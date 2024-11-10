@@ -1,12 +1,12 @@
 main:
-  - title: "Posts by year"
+  - title: "Posts"
     url: /posts/
-  # - title: "Portfolio"
-  #   url: /portfolio/
+  - title: "Projects"
+    url: /portfolio/
 #  - title: "Resume"
 #    url: /resume/
 #  - title: "Categories"
 #    url: /categories/
-  - title: "Posts by tag"
+  - title: "Tags"
     url: /tags/
   

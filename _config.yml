@@ -23,7 +23,7 @@ title: "Aymeric Roucher 👨‍💻"
 subtitle: ""
 email: aymeric.roucher@yahoo.fr
 description: >- # this means to ignore newlines until "baseurl:"
-  I'm Aymeric (pronounce "m-ric"), Machine Learning Engineer at Hugging Face.
+  I'm Aymeric ("m-ric"), Machine Learning Engineer at Hugging Face.
 words_per_minute: 300
 search: true
 search_full_content: true
@@ -39,7 +39,7 @@ kramdown:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 10 # amount of posts to show
+paginate: 20 # amount of posts to show
 paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
@@ -71,7 +71,7 @@ plugins:
 author:
   name: "Aymeric (M-Ric) Roucher"
   avatar: "/assets/images/photo_LinkedIn.jpg"
-  bio: "Machine Learning Engineer at 🤗, passionate about LLMs, worried about climate."
+  bio: "Machine Learning Engineer at 🤗."
   location: "Paris, FRA"
   links:
     - label: "Email"
@@ -117,14 +117,24 @@ defaults:
       comments: true
       share: true
       related: true
-  # - scope:
-  #     path: ""
-  #     type: portfolio
-  #   values:
-  #     layout: single
-  #     author_profile: true
-  #     share: true
-  #     related: true
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: false
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      related: true
 
 # SEO related
 # analytics:
