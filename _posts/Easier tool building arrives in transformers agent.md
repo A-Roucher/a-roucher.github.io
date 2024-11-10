@@ -1,3 +1,14 @@
+---
+title: Easier tool building arrives in transformers agent
+toc: true
+categories: 
+* AI news
+* 
+* 
+tags:
+  - AI
+  - LLM
+---
 
 
 Transformers v4.45.0 released: includes a lightning-fast method to build tools! ⚡️

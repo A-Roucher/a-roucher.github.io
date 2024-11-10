@@ -1,3 +1,14 @@
+---
+title: Rhymes AI releases Aria
+toc: true
+categories: 
+* AI news
+* 
+* 
+tags:
+  - AI
+  - LLM
+---
 
 
 **Rhymes AI drops Aria: small Multimodal MoE that beats GPT-4o and Gemini-1.5-Flash ⚡️**

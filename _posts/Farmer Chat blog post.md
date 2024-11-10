@@ -1,3 +1,14 @@
+---
+title: Farmer Chat blog post
+toc: true
+categories: 
+* AI news
+* 
+* 
+tags:
+  - AI
+  - LLM
+---
 
 
 🤗 I'm very proud to have supported [**CGIAR**](https://www.linkedin.com/feed/#) and [**Digital Green**](https://www.linkedin.com/feed/#) in making Farmer.chat, an app that supports 20k smallholder farmers on a daily basis 🌾

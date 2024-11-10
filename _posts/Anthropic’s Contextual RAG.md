@@ -1,3 +1,14 @@
+---
+title: Anthropic’s Contextual RAG
+toc: true
+categories: 
+* AI news
+* 
+* 
+tags:
+  - AI
+  - LLM
+---
 
 
 Anthropic just released a chunk improvement technique that vastly improves RAG performance! 🔥

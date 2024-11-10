@@ -1,3 +1,14 @@
+---
+title: Qwen 2.5
+toc: true
+categories: 
+* AI news
+* 
+* 
+tags:
+  - AI
+  - LLM
+---
 
 **🔥 Qwen releases their 2.5 family of models: New SOTA for all sizes up to 72B!**
 

@@ -1,3 +1,14 @@
+---
+title: Rhymes AI releases Allegro
+toc: true
+categories: 
+* AI news
+* 
+* 
+tags:
+  - AI
+  - LLM
+---
 
 
 **🎬 Rhymes AI just released Allegro, the very first open-source commercial-grade video generation model!**

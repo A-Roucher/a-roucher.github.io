@@ -1,3 +1,14 @@
+---
+title: Colbert vs rerankers
+toc: true
+categories: 
+* AI news
+* 
+* 
+tags:
+  - AI
+  - LLM
+---
 
 
 **How to re-rank your snippets in RAG ⇒ ColBERT vs Rerankers vs Cross-Encoders** ⚔️

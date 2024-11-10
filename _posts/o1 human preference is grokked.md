@@ -1,3 +1,14 @@
+---
+title: o1 human preference is grokked
+toc: true
+categories: 
+* AI news
+* 
+* 
+tags:
+  - AI
+  - LLM
+---
 
 
 Great insight from o1 blog: Human vibe tests for LLM strength are now grokked ✅

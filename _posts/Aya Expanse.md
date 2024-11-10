@@ -1,3 +1,14 @@
+---
+title: Aya Expanse
+toc: true
+categories: 
+* AI news
+* 
+* 
+tags:
+  - AI
+  - LLM
+---
 
 
 **🌟 Cohere releases Aya 8B & 32B: SOTA multilingual models for 23 languages.**

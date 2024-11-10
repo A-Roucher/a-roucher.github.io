@@ -1,3 +1,14 @@
+---
+title: AndroidLab
+toc: true
+categories: 
+* AI news
+* 
+* 
+tags:
+  - AI
+  - LLM
+---
 
 AndroidLab: First ever systematic benchmark for Android mobile agents shows that small, fine-tuned open models can power a JARVIS system on your smartphone 📱🔥
 

@@ -1,3 +1,14 @@
+---
+title: Hunyuan-Large
+toc: true
+categories: 
+* AI news
+* 
+* 
+tags:
+  - AI
+  - LLM
+---
 
 🚀 Hunyuan-Large just released by Tencent: Largest ever open MoE LLM, only 52B active parameters but beats LLaMA 3.1-405B on most academic benchmarks
 

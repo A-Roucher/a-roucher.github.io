@@ -1,3 +1,14 @@
+---
+title: Draghi report
+toc: true
+categories: 
+* AI news
+* 
+* 
+tags:
+  - AI
+  - LLM
+---
 
 
 ![image.png](attachments/Posts/Draghi%20report/image.png)

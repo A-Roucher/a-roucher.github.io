@@ -1,3 +1,14 @@
+---
+title: OASIS
+toc: true
+categories: 
+* AI news
+* 
+* 
+tags:
+  - AI
+  - LLM
+---
 
 **Oasis: First Real-Time Video Game Without a Game Engine! 🎮**
 
