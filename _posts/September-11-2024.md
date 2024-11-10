@@ -1,5 +1,5 @@
 ---
-title: 
+title: September 11 2024
 toc: true
 categories: 
 - AI news
@@ -25,6 +25,5 @@ But it’s only the last of a flurry of great models: here is my top 5 for this 
 ❺ MiniCPM3-4B, a small model that claims very impressive scores on par with larger like Llama-3.1-8B
 
 Let’s keep looking, more good stuff is coming our way 🔭
-
 
 [https://media.licdn.com/dms/image/v2/D4E22AQHUKXlzm93osQ/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1726087882520?e=1729123200&v=beta&t=1rIWNAz4qRg46PLGOYbBGQdf3FvtI3GDgcsgFkcFCNo](https://media.licdn.com/dms/image/v2/D4E22AQHUKXlzm93osQ/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1726087882520?e=1729123200&v=beta&t=1rIWNAz4qRg46PLGOYbBGQdf3FvtI3GDgcsgFkcFCNo)

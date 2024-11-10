@@ -1,5 +1,5 @@
 ---
-title: 
+title: Easier tool building arrives in transformers agent
 toc: true
 categories: 
 - AI news

@@ -1,5 +1,5 @@
 ---
-title: 
+title: o1 human preference is grokked
 toc: true
 categories: 
 - AI news

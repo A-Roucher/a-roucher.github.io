@@ -1,5 +1,5 @@
 ---
-title: 
+title: CLEAR
 toc: true
 categories: 
 - AI news

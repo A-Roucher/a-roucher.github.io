@@ -1,5 +1,5 @@
 ---
-title: 
+title: Farmer Chat blog post
 toc: true
 categories: 
 - AI news

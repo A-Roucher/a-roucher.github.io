@@ -1,5 +1,5 @@
 ---
-title: 
+title: OASIS
 toc: true
 categories: 
 - AI news

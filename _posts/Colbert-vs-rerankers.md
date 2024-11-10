@@ -1,5 +1,5 @@
 ---
-title: 
+title: Colbert vs rerankers
 toc: true
 categories: 
 - AI news

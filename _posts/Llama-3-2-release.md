@@ -1,5 +1,5 @@
 ---
-title: 
+title: Llama 3 2 release
 toc: true
 categories: 
 - AI news

@@ -1,5 +1,5 @@
 ---
-title: 
+title: Hunyuan-Large
 toc: true
 categories: 
 - AI news

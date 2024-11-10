@@ -1,5 +1,5 @@
 ---
-title: 
+title: Rhymes AI releases Allegro
 toc: true
 categories: 
 - AI news

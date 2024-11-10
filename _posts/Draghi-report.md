@@ -1,5 +1,5 @@
 ---
-title: 
+title: Draghi report
 toc: true
 categories: 
 - AI news

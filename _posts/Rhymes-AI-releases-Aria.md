@@ -1,5 +1,5 @@
 ---
-title: 
+title: Rhymes AI releases Aria
 toc: true
 categories: 
 - AI news

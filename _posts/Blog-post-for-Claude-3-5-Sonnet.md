@@ -1,5 +1,5 @@
 ---
-title: 
+title: Blog post for Claude 3 5 Sonnet
 toc: true
 categories: 
 - AI news

@@ -1,5 +1,5 @@
 ---
-title: 
+title: Qwen 2.5
 toc: true
 categories: 
 - AI news

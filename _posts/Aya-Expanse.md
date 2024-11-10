@@ -1,5 +1,5 @@
 ---
-title: 
+title: Aya Expanse
 toc: true
 categories: 
 - AI news
