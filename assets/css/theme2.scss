@@ -6,3 +6,39 @@
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin2 | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+
+@import "minimal-mistakes";
+
+html {
+    font-size: 12px; // change to whatever
+  
+    @include breakpoint($medium) {
+      font-size: 14px; // change to whatever
+    }
+  
+    @include breakpoint($large) {
+      font-size: 16px; // change to whatever
+    }
+  
+    @include breakpoint($x-large) {
+      font-size: 18px; // change to whatever
+    }
+}
+
+a {
+  text-decoration: none;
+}
+hr {
+  border-top: 1px solid #868686!important;
+}
+.page__content {
+    font-size: 0.85em!important;
+}
+
+.sidebar__right {
+    font-size: 1.2em!important;
+}
+.page__content dd {
+    font-size: 0.85em!important;
+}
