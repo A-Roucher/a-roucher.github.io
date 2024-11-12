@@ -106,60 +106,62 @@
                 const yValue = calibrationPoints.y1.value + (y - calibrationPoints.y1.y) * (yRange / yPixelRange);
                 return { x: xValue, y: yValue };
             }
-
             function Magnifier() {
-                if (!imageRef.current) return null;
-                const magnifierSize = 150;
-                const coordBarHeight = 40;
-                const halfSize = magnifierSize / 2;
-                const coords = calculateCoordinates(mousePos.x, mousePos.y);
-
-                // Get natural image dimensions and container dimensions
-                const naturalWidth = imageRef.current.naturalWidth;
-                const naturalHeight = imageRef.current.naturalHeight;
-                const rect = imageRef.current.getBoundingClientRect();
-
-                // Calculate actual scaling factor
-                const scale = Math.min(rect.width / naturalWidth, rect.height / naturalHeight);
-                const scaledWidth = naturalWidth * scale;
-                const scaledHeight = naturalHeight * scale;
-                
-                // Calculate image offset within container (for centering)
-                // const offsetX = (rect.width - scaledWidth) / 2;
-                // const offsetY = (rect.height - scaledHeight) / 2;
-
-                // Adjust mouse position relative to actual image bounds
-                const adjustedMouseX = mousePos.x;
-                const adjustedMouseY = mousePos.y;
-
-                return (
-                    <div className="magnifier border-2 border-gray-300 rounded-lg overflow-hidden bg-white shadow-lg"
-                        style={{ width: magnifierSize, height: magnifierSize + coordBarHeight }}>
-                        <div style={{
-                            width: magnifierSize,
-                            height: magnifierSize,
-                            backgroundImage: `url(${imageUrl})`,
-                            backgroundPosition: `${-adjustedMouseX * zoomFactor - halfSize}px ${-(adjustedMouseY * zoomFactor - halfSize)}px`,
-                            backgroundSize: `${scaledWidth * zoomFactor}px ${scaledHeight * zoomFactor}px`,
-                            position: 'relative'
-                        }} />
-                        <div className="absolute top-1/2 left-0 w-full border-t border-red-500" 
-                            style={{ transform: 'translateY(-75px)' }} />
-                        <div className="absolute top-0 left-1/2 h-[150px] border-l border-red-500" 
-                            style={{ transform: 'translateX(-50%)' }} />
-                        <div className="h-10 bg-gray-50 border-t border-gray-200 flex items-center justify-around px-2 text-xs">
-                            <div className="flex items-center gap-1">
-                                <span className="text-gray-500">X:</span>
-                                <span className="font-mono">{coords.x !== null ? coords.x.toFixed(2) : '---'}</span>
-                            </div>
-                            <div className="flex items-center gap-1">
-                                <span className="text-gray-500">Y:</span>
-                                <span className="font-mono">{coords.y !== null ? coords.y.toFixed(2) : '---'}</span>
-                            </div>
-                        </div>
-                    </div>
-                );
+                return ;
             }
+            // function Magnifier() {
+            //     if (!imageRef.current) return null;
+            //     const magnifierSize = 150;
+            //     const coordBarHeight = 40;
+            //     const halfSize = magnifierSize / 2;
+            //     const coords = calculateCoordinates(mousePos.x, mousePos.y);
+
+            //     // Get natural image dimensions and container dimensions
+            //     const naturalWidth = imageRef.current.naturalWidth;
+            //     const naturalHeight = imageRef.current.naturalHeight;
+            //     const rect = imageRef.current.getBoundingClientRect();
+
+            //     // Calculate actual scaling factor
+            //     const scale = Math.min(rect.width / naturalWidth, rect.height / naturalHeight);
+            //     const scaledWidth = naturalWidth * scale;
+            //     const scaledHeight = naturalHeight * scale;
+                
+            //     // Calculate image offset within container (for centering)
+            //     // const offsetX = (rect.width - scaledWidth) / 2;
+            //     // const offsetY = (rect.height - scaledHeight) / 2;
+
+            //     // Adjust mouse position relative to actual image bounds
+            //     const adjustedMouseX = mousePos.x;
+            //     const adjustedMouseY = mousePos.y;
+
+            //     return (
+            //         <div className="magnifier border-2 border-gray-300 rounded-lg overflow-hidden bg-white shadow-lg"
+            //             style={{ width: magnifierSize, height: magnifierSize + coordBarHeight }}>
+            //             <div style={{
+            //                 width: magnifierSize,
+            //                 height: magnifierSize,
+            //                 backgroundImage: `url(${imageUrl})`,
+            //                 backgroundPosition: `${-adjustedMouseX * zoomFactor - halfSize}px ${-(adjustedMouseY * zoomFactor - halfSize)}px`,
+            //                 backgroundSize: `${scaledWidth * zoomFactor}px ${scaledHeight * zoomFactor}px`,
+            //                 position: 'relative'
+            //             }} />
+            //             <div className="absolute top-1/2 left-0 w-full border-t border-red-500" 
+            //                 style={{ transform: 'translateY(-75px)' }} />
+            //             <div className="absolute top-0 left-1/2 h-[150px] border-l border-red-500" 
+            //                 style={{ transform: 'translateX(-50%)' }} />
+            //             <div className="h-10 bg-gray-50 border-t border-gray-200 flex items-center justify-around px-2 text-xs">
+            //                 <div className="flex items-center gap-1">
+            //                     <span className="text-gray-500">X:</span>
+            //                     <span className="font-mono">{coords.x !== null ? coords.x.toFixed(2) : '---'}</span>
+            //                 </div>
+            //                 <div className="flex items-center gap-1">
+            //                     <span className="text-gray-500">Y:</span>
+            //                     <span className="font-mono">{coords.y !== null ? coords.y.toFixed(2) : '---'}</span>
+            //                 </div>
+            //             </div>
+            //         </div>
+            //     );
+            // }
 
             const startCalibration = () => {
                 setCalibrationStep(0);
