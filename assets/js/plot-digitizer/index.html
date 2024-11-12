@@ -28,6 +28,35 @@
             max-height: 90vh;
             overflow-y: auto;
         }
+        .main-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .side-panel {
+            background: #f8fafc;
+            padding: 1rem;
+            border-right: 1px solid #e2e8f0;
+            overflow-y: auto;
+        }
+        .main-content {
+            overflow: hidden;
+            position: relative;
+        }
+        .magnifier-container {
+            position: static;
+            margin: 1rem 0;
+            height: 190px;
+            width: 100%;
+        }
+        .magnifier {
+            position: relative !important;
+            right: 0 !important;
+            top: 0 !important;
+            width: 100% !important;
+        }
+        body { margin: 0; }
     </style>
 </head>
 <body>
@@ -52,8 +81,10 @@
             const [imageUrl, setImageUrl] = React.useState(null);
             const [calibrationStep, setCalibrationStep] = React.useState(null);
             const [calibrationPoints, setCalibrationPoints] = React.useState({
-                x1: { x: null, y: null, value: '' }, x2: { x: null, y: null, value: '' },
-                y1: { x: null, y: null, value: '' }, y2: { x: null, y: null, value: '' }
+                x1: { x: null, y: null, value: '' },
+                x2: { x: null, y: null, value: '' },
+                y1: { x: null, y: null, value: '' },
+                y2: { x: null, y: null, value: '' }
             });
             const [dataPoints, setDataPoints] = React.useState([]);
             const [isCalibrated, setIsCalibrated] = React.useState(false);
@@ -84,8 +115,8 @@
                 const coords = calculateCoordinates(mousePos.x, mousePos.y);
                 
                 return (
-                    <div className="absolute right-4 top-4 border-2 border-gray-300 rounded-lg overflow-hidden bg-white shadow-lg"
-                         style={{ width: magnifierSize, height: magnifierSize + 40, pointerEvents: 'none', zIndex: 10 }}>
+                    <div className="magnifier border-2 border-gray-300 rounded-lg overflow-hidden bg-white shadow-lg"
+                         style={{ width: '100%', height: magnifierSize + 40 }}>
                         <div style={{
                             width: '100%',
                             height: magnifierSize,
@@ -94,8 +125,7 @@
                             backgroundSize: `${rect.width * zoomFactor}px ${rect.height * zoomFactor}px`
                         }} />
                         <div className="absolute top-1/2 left-0 w-full border-t border-red-500 -translate-y-[75px]" />
-                        <div className="absolute top-0 left-1/2 h-[150px] border-l border-red-500" 
-                             style={{ transform: 'translateX(-50%)' }} />
+                        <div className="absolute top-0 left-1/2 h-[150px] border-l border-red-500 -translate-x-1/2" />
                         <div className="absolute bottom-0 left-0 right-0 h-10 bg-gray-50 border-t border-gray-200 flex items-center justify-around px-2 text-xs">
                             <div className="flex items-center gap-1">
                                 <span className="text-gray-500">X:</span>
@@ -113,8 +143,10 @@
             const startCalibration = () => {
                 setCalibrationStep(0);
                 setCalibrationPoints({
-                    x1: { x: null, y: null, value: '' }, x2: { x: null, y: null, value: '' },
-                    y1: { x: null, y: null, value: '' }, y2: { x: null, y: null, value: '' }
+                    x1: { x: null, y: null, value: '' },
+                    x2: { x: null, y: null, value: '' },
+                    y1: { x: null, y: null, value: '' },
+                    y2: { x: null, y: null, value: '' }
                 });
                 setIsCalibrated(false);
                 setShowValueInput(false);
@@ -127,8 +159,10 @@
                     setImageUrl(URL.createObjectURL(file));
                     setCalibrationStep(null);
                     setCalibrationPoints({
-                        x1: { x: null, y: null, value: '' }, x2: { x: null, y: null, value: '' },
-                        y1: { x: null, y: null, value: '' }, y2: { x: null, y: null, value: '' }
+                        x1: { x: null, y: null, value: '' },
+                        x2: { x: null, y: null, value: '' },
+                        y1: { x: null, y: null, value: '' },
+                        y2: { x: null, y: null, value: '' }
                     });
                     setDataPoints([]);
                     setIsCalibrated(false);
@@ -191,121 +225,133 @@
                 document.body.removeChild(link);
             };
 
-            return (
-                <div className="w-full p-4">
-                    <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
+            function SidePanel() {
+                return (
+                    <div className="side-panel">
                         <div className="space-y-4">
-                            <div className="flex justify-between items-center">
-                                <input type="file" accept="image/*" onChange={handleImageUpload}
-                                       className="block w-full max-w-xs text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
-                                <div className="flex gap-2">
-                                    {imageUrl && (
-                                        <button onClick={startCalibration}
-                                                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                                            {calibrationStep !== null ? 'Restart Calibration' : 'Start Calibration'}
-                                        </button>
-                                    )}
-                                    <button onClick={() => setShowGuide(true)}
-                                            className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">
-                                        Calibration Guide
+                            <input type="file" accept="image/*" onChange={handleImageUpload}
+                                   className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
+                            
+                            <div className="flex flex-col gap-2">
+                                {imageUrl && (
+                                    <button onClick={startCalibration}
+                                            className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                        {calibrationStep !== null ? 'Restart Calibration' : 'Start Calibration'}
                                     </button>
-                                </div>
+                                )}
+                                <button onClick={() => setShowGuide(true)}
+                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">
+                                    Calibration Guide
+                                </button>
                             </div>
 
-                            {imageUrl && (
-                                <div className="space-y-4">
-                                    {calibrationStep !== null && (
-                                        <div className="text-center p-2 bg-blue-100 rounded">
-                                            {showValueInput ? (
-                                                <div className="flex items-center justify-center gap-2">
-                                                    <span>Enter value for {calibrationSteps[calibrationStep].toUpperCase()}:</span>
-                                                    <input type="number" className="w-32 px-2 py-1 border rounded"
-                                                           autoFocus
-                                                           onKeyPress={(e) => e.key === 'Enter' && handleCalibrationValue(e.target.value)}
-                                                           onBlur={(e) => handleCalibrationValue(e.target.value)} />
-                                                </div>
-                                            ) : (
-                                                <span>Click to set {calibrationSteps[calibrationStep].toUpperCase()} point</span>
-                                            )}
+                            {calibrationStep !== null && (
+                                <div className="p-2 bg-blue-100 rounded">
+                                    {showValueInput ? (
+                                        <div className="flex flex-col gap-2">
+                                            <span>Enter value for {calibrationSteps[calibrationStep].toUpperCase()}:</span>
+                                            <input type="number" className="w-full px-2 py-1 border rounded"
+                                                   autoFocus
+                                                   onKeyPress={(e) => e.key === 'Enter' && handleCalibrationValue(e.target.value)}
+                                                   onBlur={(e) => handleCalibrationValue(e.target.value)} />
                                         </div>
-                                    )}
-
-                                    <div className="relative border border-gray-200 rounded-lg overflow-hidden"
-                                         onMouseMove={handleMouseMove}
-                                         style={{ cursor: calibrationStep !== null || isCalibrated ? 'crosshair' : 'default' }}>
-                                        <img ref={imageRef} src={imageUrl} alt="Plot to digitize"
-                                             className="max-w-full h-auto" onClick={handleImageClick} />
-                                        
-                                        {(calibrationStep !== null || isCalibrated) && (
-                                            <>
-                                                <div className="absolute top-0 left-0 w-full border-t border-red-500 pointer-events-none"
-                                                     style={{ top: mousePos.y }} />
-                                                <div className="absolute top-0 left-0 h-full border-l border-red-500 pointer-events-none"
-                                                     style={{ left: mousePos.x }} />
-                                            </>
-                                        )}
-
-                                        {(calibrationStep !== null || isCalibrated) && <Magnifier />}
-
-                                        {Object.entries(calibrationPoints).map(([key, point]) => {
-                                            if (point.x === null || point.y === null) return null;
-                                            const isYPoint = key.startsWith('y');
-                                            return (
-                                                <div key={key}
-                                                     className={`absolute rounded-full transform ${
-                                                         isYPoint ? 'w-3 h-3 -translate-x-1.5 -translate-y-1.5 bg-green-500' : 
-                                                                   'w-2 h-2 -translate-x-1 -translate-y-1 bg-blue-500'
-                                                     }`}
-                                                     style={{ left: point.x, top: point.y, zIndex: 20 }} />
-                                            );
-                                        })}
-                                        
-                                        {dataPoints.map((point, index) => {
-                                            const coords = calculateCoordinates(point.x, point.y);
-                                            const xRange = calibrationPoints.x2.value - calibrationPoints.x1.value;
-                                            const yRange = calibrationPoints.y2.value - calibrationPoints.y1.value;
-                                            const xPixelRange = calibrationPoints.x2.x - calibrationPoints.x1.x;
-                                            const yPixelRange = calibrationPoints.y2.y - calibrationPoints.y1.y;
-                                            const x = calibrationPoints.x1.x + (point.x - calibrationPoints.x1.value) * (xPixelRange / xRange);
-                                            const y = calibrationPoints.y1.y - (point.y - calibrationPoints.y1.value) * (yRange / yPixelRange);
-                                            return (
-                                                <div key={index}
-                                                     className="absolute w-2 h-2 bg-red-500 rounded-full transform -translate-x-1 -translate-y-1"
-                                                     style={{ left: x, top: y, zIndex: 10 }} />
-                                            );
-                                        })}
-                                    </div>
-
-                                    {dataPoints.length > 0 && (
-                                        <div className="space-y-4">
-                                            <h3 className="text-lg font-semibold">Data Points</h3>
-                                            <div className="max-h-40 overflow-y-auto">
-                                                <table className="w-full">
-                                                    <thead>
-                                                        <tr>
-                                                            <th className="px-4 py-2">X</th>
-                                                            <th className="px-4 py-2">Y</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        {dataPoints.map((point, index) => (
-                                                            <tr key={index}>
-                                                                <td className="border px-4 py-2">{point.x.toFixed(2)}</td>
-                                                                <td className="border px-4 py-2">{point.y.toFixed(2)}</td>
-                                                            </tr>
-                                                        ))}
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <button onClick={downloadCSV}
-                                                    className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                                                Download CSV
-                                            </button>
-                                        </div>
+                                    ) : (
+                                        <span>Click to set {calibrationSteps[calibrationStep].toUpperCase()} point</span>
                                     )}
                                 </div>
                             )}
+
+                            {(calibrationStep !== null || isCalibrated) && (
+                                <div className="magnifier-container">
+                                    <Magnifier />
+                                </div>
+                            )}
+
+                            {dataPoints.length > 0 && (
+                                <div className="space-y-4">
+                                    <h3 className="text-lg font-semibold">Data Points</h3>
+                                    <div className="max-h-40 overflow-y-auto">
+                                        <table className="w-full">
+                                            <thead>
+                                                <tr>
+                                                    <th className="px-4 py-2">X</th>
+                                                    <th className="px-4 py-2">Y</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {dataPoints.map((point, index) => (
+                                                    <tr key={index}>
+                                                        <td className="border px-4 py-2">{point.x.toFixed(2)}</td>
+                                                        <td className="border px-4 py-2">{point.y.toFixed(2)}</td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <button onClick={downloadCSV}
+                                            className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                        Download CSV
+                                    </button>
+                                </div>
+                            )}
                         </div>
+                    </div>
+                );
+            }
+
+            return (
+                <div className="main-container">
+                    <SidePanel />
+                    
+                    <div className="main-content">
+                        {imageUrl ? (
+                            <div className="relative h-full"
+                                 onMouseMove={handleMouseMove}
+                                 style={{ cursor: calibrationStep !== null || isCalibrated ? 'crosshair' : 'default' }}>
+                                <img ref={imageRef} src={imageUrl} alt="Plot to digitize"
+                                     className="max-w-full h-full object-contain" onClick={handleImageClick} />
+                                
+                                {(calibrationStep !== null || isCalibrated) && (
+                                    <>
+                                        <div className="absolute top-0 left-0 w-full border-t border-red-500 pointer-events-none"
+                                             style={{ top: mousePos.y }} />
+                                        <div className="absolute top-0 left-0 h-full border-l border-red-500 pointer-events-none"
+                                             style={{ left: mousePos.x }} />
+                                    </>
+                                )}
+
+                                {Object.entries(calibrationPoints).map(([key, point]) => {
+                                    if (point.x === null || point.y === null) return null;
+                                    const isYPoint = key.startsWith('y');
+                                    return (
+                                        <div key={key}
+                                             className={`absolute rounded-full transform ${
+                                                 isYPoint ? 'w-3 h-3 -translate-x-1.5 -translate-y-1.5 bg-green-500' : 
+                                                           'w-2 h-2 -translate-x-1 -translate-y-1 bg-blue-500'
+                                             }`}
+                                             style={{ left: point.x, top: point.y, zIndex: 20 }} />
+                                    );
+                                })}
+                                
+                                {dataPoints.map((point, index) => {
+                                    const xRange = calibrationPoints.x2.value - calibrationPoints.x1.value;
+                                    const yRange = calibrationPoints.y2.value - calibrationPoints.y1.value;
+                                    const xPixelRange = calibrationPoints.x2.x - calibrationPoints.x1.x;
+                                    const yPixelRange = calibrationPoints.y2.y - calibrationPoints.y1.y;
+                                    const x = calibrationPoints.x1.x + (point.x - calibrationPoints.x1.value) * (xPixelRange / xRange);
+                                    const y = calibrationPoints.y1.y - (point.y - calibrationPoints.y1.value) * (yRange / yPixelRange);
+                                    return (
+                                        <div key={index}
+                                             className="absolute w-2 h-2 bg-red-500 rounded-full transform -translate-x-1 -translate-y-1"
+                                             style={{ left: x, top: y, zIndex: 10 }} />
+                                    );
+                                })}
+                            </div>
+                        ) : (
+                            <div className="flex items-center justify-center h-full bg-gray-50">
+                                <p className="text-gray-500">Upload an image to begin</p>
+                            </div>
+                        )}
                     </div>
 
                     <Modal isOpen={showGuide} onClose={() => setShowGuide(false)} title="How to Calibrate the Plot">
