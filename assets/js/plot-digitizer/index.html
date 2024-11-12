@@ -45,7 +45,7 @@
             position: relative;
         }
         .magnifier-container {
-            position: static;
+            position: relative;  /* Changed from static */
             margin: 1rem 0;
             height: 190px;
             width: 100%;
@@ -56,6 +56,7 @@
             top: 0 !important;
             width: 100% !important;
         }
+</style>
         body { margin: 0; }
     </style>
 </head>
@@ -125,7 +126,7 @@
                             backgroundSize: `${rect.width * zoomFactor}px ${rect.height * zoomFactor}px`
                         }} />
                         <div className="absolute top-1/2 left-0 w-full border-t border-red-500 -translate-y-[75px]" />
-                        <div className="absolute top-0 left-1/2 h-[150px] border-l border-red-500 -translate-x-1/2" />
+                        <div className="absolute top-0 left-1/2 h-[150px] border-l border-red-500 -translate-x-1/2" style={{ transform: 'translateX(-50%)' }} />
                         <div className="absolute bottom-0 left-0 right-0 h-10 bg-gray-50 border-t border-gray-200 flex items-center justify-around px-2 text-xs">
                             <div className="flex items-center gap-1">
                                 <span className="text-gray-500">X:</span>
@@ -173,17 +174,21 @@
             const handleMouseMove = (event) => {
                 if (!imageRef.current) return;
                 const rect = imageRef.current.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
                 setMousePos({
-                    x: event.clientX - rect.left,
-                    y: event.clientY - rect.top
+                    x: event.pageX - rect.left - scrollLeft,
+                    y: event.pageY - rect.top - scrollTop
                 });
             };
 
             const handleImageClick = (event) => {
                 if (!imageRef.current || (calibrationStep === null && !isCalibrated)) return;
                 const rect = imageRef.current.getBoundingClientRect();
-                const x = event.clientX - rect.left;
-                const y = event.clientY - rect.top;
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+                const x = event.pageX - rect.left - scrollLeft;
+                const y = event.pageY - rect.top - scrollTop;
 
                 if (!isCalibrated && calibrationStep < 4) {
                     const currentPoint = calibrationSteps[calibrationStep];
@@ -258,6 +263,12 @@
                                     ) : (
                                         <span>Click to set {calibrationSteps[calibrationStep].toUpperCase()} point</span>
                                     )}
+                                </div>
+                            )}
+
+                            {isCalibrated && (
+                                <div className="p-2 bg-green-100 rounded text-green-800 font-medium text-center">
+                                    Click on the graph to add points!
                                 </div>
                             )}
 

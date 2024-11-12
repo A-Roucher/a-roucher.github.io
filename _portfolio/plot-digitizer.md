@@ -6,7 +6,7 @@ img: /assets/img/projects/plot-digitizer/thumbnail.jpg
 importance: 1
 category: work
 ---
-<div style="height: 100vh; width: 100%; margin: -2rem -2rem 0 -2rem;">
+<div style="height: 100vh; width: 100%; margin: 0;">
     <iframe 
         src="{{ '/assets/js/plot-digitizer/index.html' | relative_url }}" 
         style="height: 100%; width: 100%; border: none;"
